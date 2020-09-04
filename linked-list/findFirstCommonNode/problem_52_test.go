@@ -48,6 +48,6 @@ func TestFindFirstCommonNode(t *testing.T) {
 		Val:  8,
 		Next: &link4,
 	}
-	result := FindFirstCommonNode(&link1, &link1)
-	assert.Equal(t, 1, result.Val)
+	result := FindFirstCommonNode(&link1, &link7)
+	assert.Equal(t, 4, result.Val)
 }
