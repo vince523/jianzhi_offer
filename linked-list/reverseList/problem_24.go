@@ -1,4 +1,4 @@
-package problem_24
+package reverseList
 
 type ListNode struct {
 	Val int

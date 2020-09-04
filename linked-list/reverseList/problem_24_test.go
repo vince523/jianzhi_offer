@@ -1,4 +1,4 @@
-package problem_24
+package reverseList
 
 import (
 	"github.com/stretchr/testify/assert"

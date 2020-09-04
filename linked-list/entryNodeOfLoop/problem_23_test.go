@@ -1,4 +1,4 @@
-package problem_23
+package entryNodeOfLoop
 
 import (
 	"testing"

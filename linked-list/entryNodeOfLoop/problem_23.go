@@ -1,4 +1,4 @@
-package problem_23
+package entryNodeOfLoop
 
 type ListNode struct {
 	Val int
