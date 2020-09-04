@@ -1,4 +1,4 @@
-package problem_03
+package problem_23
 
 import (
 	"testing"
@@ -23,9 +23,9 @@ func TestFindKthToTail(t *testing.T) {
 	}
 
 	ret := FindKthToTail(&link1, 2)
-	assert.Equal(t, ret.Val, 2)
+	assert.Equal(t, 2, ret.Val)
 	ret = FindKthToTail(&link1, 4)
-	assert.Equal(t, ret, nil)
+	assert.Equal(t, nil, ret)
 	ret = FindKthToTail(&link1, 0)
-	assert.Equal(t, ret, nil)
+	assert.Equal(t, nil, ret)
 }
