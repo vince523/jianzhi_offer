@@ -44,3 +44,35 @@ func TestDeleteNode(t *testing.T) {
 	// 删除尾节点
 	assert.Equal(t, []int{1, 2, 3}, nums)
 }
+
+func TestDeleteDuplication(t *testing.T) {
+	var	(
+		link1, link2, link3, link4 ListNode
+	)
+	link4 = ListNode{
+		Val:  4,
+		Next: nil,
+	}
+
+	link3 = ListNode{
+		Val:  2,
+		Next: &link4,
+	}
+
+	link2 = ListNode{
+		Val:  2,
+		Next: &link3,
+	}
+
+	link1 = ListNode{
+		Val:  1,
+		Next: &link2,
+	}
+
+	head := DeleteDuplication(&link1)
+	var nums []int
+	for ;head!= nil; head=head.Next{
+		nums = append(nums, head.Val)
+	}
+	assert.Equal(t, []int{1, 4}, nums)
+}

@@ -26,3 +26,33 @@ func DeleteNode(head, node *ListNode)  {
 		head.Next = nil
 	}
 }
+
+func DeleteDuplication(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil{
+		return head
+	}
+
+	temp := &ListNode{0, nil}
+	result := temp
+
+	flag := false
+	for ;head != nil; head=head.Next {
+		pNext := head.Next
+		// 相等
+		if pNext != nil && pNext.Val == head.Val {
+			flag = true
+		}else {
+			// 不相等情况
+			// 先判断flag
+			if flag {
+				flag = false
+			} else {
+				// 加入 temp
+				temp.Next = &ListNode{head.Val, nil}
+				temp = temp.Next
+			}
+		}
+	}
+
+	return result.Next
+}
