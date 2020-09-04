@@ -7,7 +7,7 @@ type ListNode struct {
 
 func FindKthToTail(pListHead *ListNode, k int) *ListNode {
 	// 空指针判断
-	if pListHead == nil || k == 0{
+	if pListHead == nil || k == 0 {
 		return nil
 	}
 
