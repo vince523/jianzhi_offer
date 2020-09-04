@@ -36,21 +36,15 @@ jobs:
 
       - name: Run gofmt
         if: always()
-        run: |
-          golintout="$(gofmt -s -l .)";
-          if [ -n "$golintout" ]; then
-            awk '{ print $0": format check failed" }' <<< $golintout
-            exit 1
-          fi
-        shell: bash
+        run: go fmt
 
       - name: Run go vet
         if: always()
-        run: go vet
+        run: go vet ./..
 
       - name: Run go vet -vettool shadow
         if: always()
-        run: go vet -vettool $(which shadow)
+        run: go vet -vettool ./.. $(which shadow)
 
       - name: Run golint
         if: always()
