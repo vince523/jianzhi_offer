@@ -16,7 +16,7 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 		if inorder[i] == preorder[0] {
 			return &TreeNode{
 				Val: preorder[0],
-				Left: buildTree(preorder[1:i+1], inorder[:]),
+				Left: buildTree(preorder[1:i+1], inorder[:i]),
 				Right: buildTree(preorder[i+1:], inorder[i+1:]),
 			}
 		}
